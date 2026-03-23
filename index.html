@@ -42,6 +42,66 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<style>
+	.nt-blog-card {
+		display: block;
+		border-radius: 10px;
+		padding: 40px 32px;
+		margin-bottom: 24px;
+		text-decoration: none;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		overflow: hidden;
+	}
+	.nt-blog-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+		text-decoration: none;
+	}
+	.nt-blog-card--kaggle {
+		background: linear-gradient(135deg, #20beff 0%, #1565c0 100%);
+		color: #fff;
+	}
+	.nt-blog-card--medium {
+		background: linear-gradient(135deg, #383838 0%, #111 100%);
+		color: #fff;
+		border: 1px solid #444;
+	}
+	.nt-blog-card__icon { font-size: 2.6em; margin-bottom: 14px; }
+	.nt-blog-card__platform {
+		font-size: 0.72em;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		opacity: 0.75;
+		margin-bottom: 8px;
+		font-weight: 700;
+		color: #fff;
+	}
+	.nt-blog-card__title {
+		font-size: 1.55em;
+		font-weight: 700;
+		margin-bottom: 12px;
+		line-height: 1.25;
+		color: #fff;
+	}
+	.nt-blog-card__sub {
+		font-size: 0.9em;
+		opacity: 0.85;
+		margin-bottom: 24px;
+		line-height: 1.6;
+		color: rgba(255,255,255,0.9);
+	}
+	.nt-blog-card__cta {
+		display: inline-block;
+		font-size: 0.82em;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #fff;
+		border-bottom: 2px solid rgba(255,255,255,0.5);
+		padding-bottom: 2px;
+	}
+	</style>
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -66,9 +126,10 @@
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
 						<li><a href="#" data-nav-section="about">About</a></li>
 <!-- 						<li><a href="#" data-nav-section="skills">Skills</a></li> -->
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="work">Work</a></li>
-						<li><a href="#" data-nav-section="blog">Blog</a></li>
+					<li><a href="#" data-nav-section="experience">Experience</a></li>
+					<li><a href="#" data-nav-section="featured">Blogs</a></li>
+					<li><a href="#" data-nav-section="work">Work</a></li>
+					<li><a href="#" data-nav-section="blog">Articles</a></li>
 <!-- 						<li><a href="#" data-nav-section="contact">Contact</a></li> -->
 					</ul>
 				</div>
@@ -91,14 +152,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<div class="col-md-12">
 									<div class="about-desc">
 									<h1>Welcome to my Website</h1>
-						   			<p>Hi, my name is Nick Brooks. I come from a economics background and now work in Data Science. My hobbies include music, guitar, martial arts, backpacking, listening to podcasts, and biking. I've lived in four continents, but spent most of my life in China. I moved to England after finishing university.
+						   			<p>Hi, my name is Nick Brooks. I come from a economics background and now work in Data Science. My hobbies include music, guitar, martial arts, backpacking, listening to podcasts, and biking. I moved to England after finishing university.
 						   			</p>
 						   			<p>Reach me at nick.brooks27 AT gmail.com</p>
-						   			<p>I find unstructured data especially promising.</p>
-<!-- 									<p>
-										<a class="btn btn-primary btn-learn">Download CV <i class="icon-download4"></i></a>
-										<a class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a>
-									</p> -->
 								</div>
 							</div>
 						</div>
@@ -223,65 +279,133 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-				         <div class="timeline-centered">
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					                  <h2><a href="#">Machine Learning Engineer at CwT</a> <span>2020-Current</span></h2>
-					                  <ul>
-					                  	<li>Travel Industry, Product & Technology Division</li>
-					                  </ul>
-					               </div>
-					            </div>
-					         </article>
+			         <div class="timeline-centered">
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Data Scientist at Collinson</a> <span>2018-2020</span></h2>
-					               	<ul>
-									  <li>Central Services, Data Products, Data Science & Engineering</li>
-									  <li>Price Optimisation, Fraud Detection, Product Recommendation, Data Lake, and Metrics Analytics</li>
-									  <li>Python Programming, AWS, Data Engineering, APIs, Full-Stack</li>
-									</ul>
-					               </div>
-					            </div>
-					         </article>
+				         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+				            <div class="timeline-entry-inner">
+				               <div class="timeline-icon color-1">
+				                  <i class="icon-pen2"></i>
+				               </div>
+				               <div class="timeline-label">
+				                  <h2><a href="https://www.mindtrick.ai" target="_blank">Founder &mdash; Mindtricks AI</a> <span>2024&ndash;Present</span></h2>
+				                  <ul>
+				                  	<li>Building a SaaS AI product at <a href="https://www.mindtrick.ai" target="_blank">mindtrick.ai</a></li>
+				                  	<li>Full-stack: React (Next.js), Python (FastAPI), Go (Gin), and AWS ECS Fargate</li>
+				                  	<li>Chatbot, LangGraph agents, voice conversation, TTS, STT, and image generation</li>
+				                  </ul>
+				               </div>
+				            </div>
+				         </article>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Research Assistant at Drexel University</a> <span>2017-2018</span></h2>
-					               	<ul>
-					                  <li>Air quality analysis and exploring crowdsourcing solutions to pollution awareness.</li>
-					                  <li>R Programming, Data Management, Web Scraping, Dashboards</li>
-					                </ul>
-					               </div>
-					            </div>
-					         </article>
+				         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+				            <div class="timeline-entry-inner">
+				               <div class="timeline-icon color-2">
+				                  <i class="icon-pen2"></i>
+				               </div>
+				               <div class="timeline-label">
+				                  <h2><a href="#">Machine Learning Engineer at CWT</a> <span>Jan 2020 &ndash; Dec 2024</span></h2>
+				                  <ul>
+				                  	<li>Travel Industry, Product &amp; Technology Division</li>
+				                  	<li>Air Personalisation &mdash; ML-driven personalisation of flight content for millions of travellers</li>
+				                  	<li>Ticket Ranking Algorithm &mdash; relevance and ranking models for flight search results</li>
+				                  	<li>Travel Support Chatbot &mdash; NLP chatbot for automated traveller support at scale</li>
+				                  	<li>AWS Infrastructure &mdash; cloud-native ML pipelines on ECS, Lambda, and SageMaker</li>
+				                  </ul>
+				               </div>
+				            </div>
+				         </article>
 
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
+				         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+				            <div class="timeline-entry-inner">
+				               <div class="timeline-icon color-3">
+				                  <i class="icon-pen2"></i>
+				               </div>
+				               <div class="timeline-label">
+				                  <h2><a href="https://nicapotato.itch.io" target="_blank">Indie Game Developer</a> <span>Since 2023</span></h2>
+				                  <ul>
+				                  	<li>2D games built with Raylib in C &mdash; published at nicapotato.itch.io</li>
+									<li>Puzzle games, math games, RPG games</li>
+				                  	<li>Multiplayer networking and real-time game systems</li>
+				                  </ul>
+				               </div>
+				            </div>
+				         </article>
+
+				         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+				            <div class="timeline-entry-inner">
+				               <div class="timeline-icon color-1">
+				                  <i class="icon-pen2"></i>
+				               </div>
+				               <div class="timeline-label">
+				               	<h2><a href="#">Data Scientist at Collinson</a> <span>2018&ndash;2020</span></h2>
+				               	<ul>
+								  <li>Central Services, Data Products, Data Science &amp; Engineering</li>
+								  <li>Price Optimisation, Fraud Detection, Product Recommendation, Data Lake, and Metrics Analytics</li>
+								  <li>Python, AWS, Data Engineering, APIs, Full-Stack</li>
+								</ul>
+				               </div>
+				            </div>
+				         </article>
+
+				         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+				            <div class="timeline-entry-inner">
+				               <div class="timeline-icon color-2">
+				                  <i class="icon-pen2"></i>
+				               </div>
+				               <div class="timeline-label">
+				               	<h2><a href="#">Research Assistant at Drexel University</a> <span>2017&ndash;2018</span></h2>
+				               	<ul>
+				                  <li>Air quality analysis and exploring crowdsourcing solutions to pollution awareness.</li>
+				                  <li>R Programming, Data Management, Web Scraping, Dashboards</li>
+				                </ul>
+				               </div>
+				            </div>
+				         </article>
+
+				         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
+				            <div class="timeline-entry-inner">
+				               <div class="timeline-icon color-none">
+				               </div>
+				            </div>
+				         </article>
+				      </div>
 					   </div>
 				   </div>
 				</div>
 			</section>
 
-			<section class="colorlib-work" data-section="work">
+			<section class="colorlib-featured" data-section="featured">
+			<div class="colorlib-narrow-content">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+						<span class="heading-meta">Writing</span>
+						<h2 class="colorlib-heading animate-box">Featured Blogs</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						<a href="https://www.kaggle.com/nicapotato" target="_blank" class="nt-blog-card nt-blog-card--kaggle">
+							<div class="nt-blog-card__icon">&#128202;</div>
+							<div class="nt-blog-card__platform">Kaggle</div>
+							<div class="nt-blog-card__title">Data Science &amp; ML Notebooks</div>
+							<div class="nt-blog-card__sub">Competition notebooks, deep learning experiments, and machine learning walkthroughs &mdash; from fraud detection to NLP with BERT.</div>
+							<div class="nt-blog-card__cta">Explore notebooks &rarr;</div>
+						</a>
+					</div>
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+						<a href="https://medium.com/@nicapotato" target="_blank" class="nt-blog-card nt-blog-card--medium">
+							<div class="nt-blog-card__icon">&#9997;&#65039;</div>
+							<div class="nt-blog-card__platform">Medium</div>
+							<div class="nt-blog-card__title">Essays on AI &amp; Technology</div>
+							<div class="nt-blog-card__sub">Reflections on artificial intelligence, consciousness, surveillance, and the future of human-computer interaction.</div>
+							<div class="nt-blog-card__cta">Read articles &rarr;</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="colorlib-work" data-section="work">
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
@@ -316,39 +440,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						</div>
 					</div>
 				</div>
-			</section>
+		</section>
 
-			<section class="colorlib-blog" data-section="blog">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Read</span>
-							<h2 class="colorlib-heading">Recent Blog</h2>
+		<section class="colorlib-blog" data-section="blog">
+			<div class="colorlib-narrow-content">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+						<span class="heading-meta">Read</span>
+						<h2 class="colorlib-heading">Recent Blog</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+						<div class="blog-entry">
+							<a href="https://medium.com/@nicapotato/telescreens-where-orwell-went-wrong-d90d52dddd5a" class="blog-img"><img src="images/george-orwell-quotes-header-min.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+							<div class="desc">
+								<span><small>June 2017 </small> | <small> AI, Surveillance </small></span>
+								<h3>Telescreens: Where Orwell went Wrong</a></h3>
+								<p>Explore how Orwell's 1984 missed some realities of modern surveillance.</p>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="https://medium.com/@nicapotato/telescreens-where-orwell-went-wrong-d90d52dddd5a" class="blog-img"><img src="images/george-orwell-quotes-header-min.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>June 2017 </small> | <small> AI, Surveillance </small></span>
-									<h3>Telescreens: Where Orwell went Wrong</a></h3>
-									<p>Explore how Orwell's 1984 missed some realities of modern surveillance.</p>
-								</div>
+					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
+						<div class="blog-entry">
+							<a href="https://medium.com/@nicapotato/from-siri-to-her-own-self-8b86263f18f0" class="blog-img"><img src="images/her-ai-img.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+							<div class="desc">
+								<span><small>June 2017 </small> | <small> AI, Consciousness </small></span>
+								<h3>From Siri to Her own Self</a></h3>
+								<p>How close are we to Spike Jonze's movie <strong>"Her"</strong> reality in terms of AI technology?</p>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="https://medium.com/@nicapotato/from-siri-to-her-own-self-8b86263f18f0" class="blog-img"><img src="images/her-ai-img.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>June 2017 </small> | <small> AI, Consciousness </small></span>
-									<h3>From Siri to Her own Self</a></h3>
-									<p>How close are we to Spike Jonze's movie <strong>"Her"</strong> reality in terms of AI technology?</p>
-								</div>
-							</div>
-						</div>
-				</div>
-			</section>
+					</div>
+			</div>
+		</section> -->
 		</div><!-- end:colorlib-main -->
 	</div><!-- end:container-wrap -->
 	</div><!-- end:colorlib-page -->
