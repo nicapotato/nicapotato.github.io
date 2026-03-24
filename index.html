@@ -1,30 +1,33 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en-GB">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Nick Brooks Website</title>
+	<title>Nick Brooks — Data Science &amp; Engineering | London</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="Nick Brooks — Data science and engineering in London, UK. Founder of Mindtricks AI (full-stack SaaS). Former ML engineer at CWT; data scientist at Collinson. Indie games, Kaggle notebooks, writing on AI." />
+	<meta name="keywords" content="Nick Brooks, data science, machine learning, London, Mindtricks AI, ML engineer" />
+	<meta name="author" content="Nick Brooks" />
+	<link rel="canonical" href="https://nicapotato.github.io/" />
 
   <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta property="og:title" content="Nick Brooks — Data Science &amp; Engineering"/>
+	<meta property="og:image" content="https://nicapotato.github.io/images/about.png"/>
+	<meta property="og:url" content="https://nicapotato.github.io/"/>
+	<meta property="og:site_name" content="Nick Brooks"/>
+	<meta property="og:description" content="Data science and engineering in London. Mindtricks AI founder, ex–ML engineer at CWT, games and notebooks."/>
+	<meta name="twitter:title" content="Nick Brooks — Data Science &amp; Engineering" />
+	<meta name="twitter:image" content="https://nicapotato.github.io/images/about.png" />
+	<meta name="twitter:url" content="https://nicapotato.github.io/" />
+	<meta name="twitter:card" content="summary" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="icon.svg" type="image/svg+xml">
 
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -43,28 +46,252 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<style>
+	/* Mindsweeper / Mindtricks pixel accent (itch embed + app icon) */
+	:root {
+		--nt-pixel-yellow: #ffde44;
+		--nt-pixel-ink: #0d0d0d;
+		--nt-pixel-border: 4px solid var(--nt-pixel-ink);
+		/* 300px aside + 6px pixel border (border is outside width in default box model) */
+		--nt-main-offset: 306px;
+	}
+
+	/* Full-bleed main column: flush to viewport right (template used max-width + auto margins) */
+	.container-wrap {
+		max-width: none !important;
+		width: 100%;
+		margin: 0 !important;
+	}
+	#colorlib-main {
+		width: calc(100% - var(--nt-main-offset)) !important;
+		max-width: none !important;
+		float: right;
+	}
+	@media screen and (max-width: 768px) {
+		#colorlib-main {
+			width: 100% !important;
+		}
+	}
+
+	#colorlib-aside {
+		border-right: 6px solid var(--nt-pixel-ink);
+	}
+	#colorlib-aside .position {
+		line-height: 1.55;
+	}
+	#colorlib-aside .author-img {
+		border-radius: 0 !important;
+		border: var(--nt-pixel-border);
+		box-shadow: 6px 6px 0 rgba(13, 13, 13, 0.15);
+	}
+	#colorlib-aside #colorlib-logo a {
+		font-family: "Press Start 2P", monospace;
+		text-transform: uppercase;
+		font-size: 11px;
+		line-height: 1.9;
+		letter-spacing: 0.05em;
+		font-weight: 400;
+		-webkit-font-smoothing: none;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeSpeed;
+		font-kerning: none;
+		font-variant-ligatures: none;
+	}
+	#colorlib-aside #colorlib-main-menu ul li a {
+		border-radius: 0;
+		border: 3px solid transparent;
+		padding: 0.35em 0.5em;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+	#colorlib-aside #colorlib-main-menu ul li.active > a {
+		border-color: var(--nt-pixel-ink);
+		background: var(--nt-pixel-yellow);
+		color: var(--nt-pixel-ink) !important;
+	}
+	#colorlib-aside #colorlib-main-menu ul li a:after {
+		display: none !important;
+	}
+
+	/* Pixel font only: logo + three main section titles */
+	#colorlib-main h2.colorlib-heading.nt-pixel-heading {
+		font-family: "Press Start 2P", monospace;
+		font-size: 15px;
+		line-height: 2;
+		letter-spacing: 0.08em;
+		font-weight: 400;
+		margin-bottom: 2.75em;
+		-webkit-font-smoothing: none;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeSpeed;
+		font-kerning: none;
+		font-variant-ligatures: none;
+		border-bottom: 4px solid var(--nt-pixel-ink);
+		padding-bottom: 1em;
+		display: inline-block;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+	@media screen and (min-width: 768px) {
+		#colorlib-main h2.colorlib-heading.nt-pixel-heading {
+			font-size: 18px;
+		}
+	}
+
+	.nt-aside-links {
+		margin-top: 1.75em;
+		padding: 0 1.1em 1.5em;
+		text-align: left;
+		border-top: 3px solid var(--nt-pixel-ink);
+	}
+	.nt-aside-links__label {
+		margin: 1em 0 0.85em;
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.45);
+		font-family: Quicksand, Arial, sans-serif;
+	}
+	.nt-aside-links ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.nt-aside-links li {
+		margin: 0 0 0.85em 0;
+		padding: 0;
+		line-height: 1.3;
+	}
+	.nt-aside-links a {
+		display: block;
+		font-family: Quicksand, Arial, sans-serif;
+		text-decoration: none;
+		color: rgba(0, 0, 0, 0.78);
+		border: 2px solid transparent;
+		border-radius: 0;
+		padding: 0.5em 0.35em;
+		transition:
+			color 0.15s ease,
+			border-color 0.15s ease,
+			background-color 0.15s ease;
+	}
+	.nt-aside-links a:hover,
+	.nt-aside-links a:focus {
+		color: #000;
+		border-color: var(--nt-pixel-ink);
+		background: rgba(255, 222, 68, 0.25);
+		outline: none;
+	}
+	.nt-aside-links a:hover .nt-aside-links__platform,
+	.nt-aside-links a:focus .nt-aside-links__platform,
+	.nt-aside-links a:hover .nt-aside-links__ico,
+	.nt-aside-links a:focus .nt-aside-links__ico {
+		color: rgba(0, 0, 0, 0.72);
+	}
+	.nt-aside-links__row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 0.55em;
+		text-align: left;
+	}
+	.nt-aside-links__ico {
+		flex: 0 0 1.15em;
+		width: 1.15em;
+		height: 1.15em;
+		margin-top: 0.15em;
+		color: rgba(0, 0, 0, 0.55);
+	}
+	.nt-aside-links__ico i {
+		font-size: 1.05em;
+		line-height: 1;
+		display: block;
+	}
+	.nt-aside-links__ico svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		fill: currentColor;
+	}
+	.nt-aside-links__text {
+		flex: 0 1 auto;
+		min-width: 0;
+	}
+	.nt-aside-links__platform {
+		display: block;
+		font-size: 9px;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.5);
+		margin-bottom: 0.2em;
+	}
+	.nt-aside-links__title {
+		display: block;
+		font-size: 11px;
+		font-weight: 600;
+		line-height: 1.35;
+		color: inherit;
+	}
+
+	.timeline-centered:before {
+		width: 6px;
+		background: var(--nt-pixel-ink);
+		margin-left: 27px;
+	}
+	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+		border-radius: 0 !important;
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+		border: 3px solid var(--nt-pixel-ink);
+		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2);
+		-moz-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2);
+		-webkit-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2);
+	}
+	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-none {
+		border-radius: 0 !important;
+		border: 3px solid #ccc;
+	}
+	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+		background: #fff;
+		border: var(--nt-pixel-border);
+		border-left: 8px solid var(--nt-pixel-yellow);
+		border-radius: 0;
+		box-shadow: 6px 6px 0 rgba(13, 13, 13, 0.12);
+	}
+	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
+		display: none;
+	}
+
 	.nt-blog-card {
 		display: block;
-		border-radius: 10px;
+		border-radius: 0;
 		padding: 40px 32px;
 		margin-bottom: 24px;
 		text-decoration: none;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		transition: transform 0.12s ease, box-shadow 0.12s ease;
 		overflow: hidden;
+		border: var(--nt-pixel-border);
+		box-shadow: 8px 8px 0 rgba(13, 13, 13, 0.2);
 	}
 	.nt-blog-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+		transform: translate(2px, 2px);
+		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.25);
 		text-decoration: none;
 	}
 	.nt-blog-card--kaggle {
 		background: linear-gradient(135deg, #20beff 0%, #1565c0 100%);
 		color: #fff;
+		border-color: var(--nt-pixel-ink);
 	}
 	.nt-blog-card--medium {
 		background: linear-gradient(135deg, #383838 0%, #111 100%);
 		color: #fff;
-		border: 1px solid #444;
+		border: var(--nt-pixel-border);
 	}
 	.nt-blog-card__icon { font-size: 2.6em; margin-bottom: 14px; }
 	.nt-blog-card__platform {
@@ -121,11 +348,24 @@
 	.nt-compact-featured .nt-blog-card {
 		margin-bottom: 12px;
 	}
-	.nt-compact-featured .nt-games-heading-row {
-		margin-top: 0.35em;
-	}
-	.nt-compact-featured .nt-itch-row {
+	.nt-compact-games .nt-itch-row {
 		margin-top: 0.25em;
+	}
+	.nt-pixel-embed {
+		border: var(--nt-pixel-border);
+		box-shadow: 8px 8px 0 rgba(13, 13, 13, 0.12);
+		display: inline-block;
+		line-height: 0;
+		max-width: 100%;
+		vertical-align: top;
+	}
+	.nt-pixel-embed iframe {
+		display: block;
+	}
+
+	/* Override template: .animate-box was opacity:0 until Waypoints + staggered JS — bad for scrapers and first paint */
+	.js .animate-box {
+		opacity: 1 !important;
 	}
 	</style>
 
@@ -145,30 +385,95 @@
 			<div class="text-center">
 				<div class="author-img" style="background-image: url(images/about.png);"></div>
 				<h1 id="colorlib-logo"><a href="index.html">Nick Brooks</a></h1>
-				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Data Science and Engineering</a> in London</span>
+				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Data Science and Engineering</a><br>Full Stack Engineer<br><br>in London, UK<br>(Settled European)</span>
 			</div>
 			<nav id="colorlib-main-menu" role="navigation" class="navbar">
 				<div id="navbar" class="collapse">
 					<ul>
-						<li class="active"><a href="#" data-nav-section="experience">Home</a></li>
-<!-- 						<li><a href="#" data-nav-section="skills">Skills</a></li> -->
-					<li><a href="#" data-nav-section="experience">Experience</a></li>
-					<li><a href="#" data-nav-section="featured">Blogs</a></li>
-					<li><a href="#" data-nav-section="work">Work</a></li>
-					<li><a href="#" data-nav-section="blog">Articles</a></li>
-<!-- 						<li><a href="#" data-nav-section="contact">Contact</a></li> -->
+						<li class="active"><a href="#" data-nav-section="experience">Experience</a></li>
+						<li><a href="#" data-nav-section="blogs">Blogs</a></li>
+						<li><a href="#" data-nav-section="games">Games</a></li>
 					</ul>
 				</div>
 			</nav>
-
-			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			<div class="nt-aside-links">
+				<p class="nt-aside-links__label">Links</p>
+				<ul>
+					<li>
+						<a href="https://nicapotato.itch.io/" target="_blank" rel="noopener noreferrer">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true">
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M3.13 1.338C2.08 1.96.02 12.082 0 12.786c0 .69 2.607 11.056 3.13 11.738.39.51 1.027.64 1.55.36.46-.25 6.021-4.09 6.021-4.09l2.339 1.79c.89.684 1.54.458 1.76-.26.26-.84 1.84-9.78 1.84-9.78l5.62-3.52s.65-.4.51-1.14c-.13-.69-.68-.89-.68-.89l-6.87-4.35s-5.94-4.07-6.57-4.42c-.63-.36-1.29-.24-1.72.24zm1.23 2.02l5.66 3.87-1.57 9.87-2.35-1.8s-4.89-3.27-5.8-3.9c-.06-.04-.09-.14-.06-.2l3.32-7.84zm7.1.69l6.33 4.01-4.47 2.8-.18-.11-4.32-2.76 2.64-4.94zm.83 6.28l1.26.81-1.1 6.89-2.5-1.91 2.34-5.79z"/></svg>
+								</span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">Itch.io</span>
+									<span class="nt-aside-links__title">Indie game developer</span>
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.mindtricks.ai/" target="_blank" rel="noopener noreferrer">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true"><i class="icon-globe"></i></span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">Web</span>
+									<span class="nt-aside-links__title">Gen AI website (Mindtricks)</span>
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.kaggle.com/nicapotato/code" target="_blank" rel="noopener noreferrer">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true">
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M.102 5.975V18.03h2.342v-5.994l5.15 5.15 1.66-1.66-3.928-3.93 3.928-3.927-1.66-1.66-5.15 5.15V5.975H.102zm18.834 0l-5.05 5.05 5.636 5.637-2.828 2.828L12.24 15.95l-1.414 1.414 4.95 4.95L24 12.09 18.936 5.975z"/></svg>
+								</span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">Kaggle</span>
+									<span class="nt-aside-links__title">Code notebooks</span>
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://x.com/MightyNimbus" target="_blank" rel="noopener noreferrer">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true"><i class="icon-social-twitter"></i></span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">X (Twitter)</span>
+									<span class="nt-aside-links__title">@MightyNimbus</span>
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://medium.com/@nicapotato" target="_blank" rel="noopener noreferrer">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true">
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM24 12c0 3.54-1.99 6.42-4.44 6.42S15.1 15.54 15.1 12s1.99-6.42 4.46-6.42S24 8.45 24 12zm-9.9 0c0 3.37-1.47 6.1-3.28 6.1-1.81 0-3.28-2.73-3.28-6.1 0-3.38 1.47-6.1 3.28-6.1 1.81 0 3.28 2.72 3.28 6.1z"/></svg>
+								</span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">Medium</span>
+									<span class="nt-aside-links__title">Written essays</span>
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/nicapotato/" target="_blank" rel="noopener noreferrer">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true"><i class="icon-instagram"></i></span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">Instagram</span>
+									<span class="nt-aside-links__title">Generative adversarial art</span>
+								</span>
+							</span>
+						</a>
+					</li>
+				</ul>
 			</div>
-
 		</aside>
-
 		<div id="colorlib-main">
 <!-- 			<section class="colorlib-skills" data-section="skills">
 				<div class="colorlib-narrow-content">
@@ -282,7 +587,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
+							<h2 class="colorlib-heading nt-pixel-heading animate-box">Work Experience</h2>
 						</div>
 					</div>
 					<div class="row">
@@ -295,11 +600,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
-				                  <h2><a href="https://www.mindtrick.ai" target="_blank">Founder &mdash; Mindtricks AI</a> <span>2024&ndash;Present</span></h2>
+				                  <h2><a href="https://www.mindtrick.ai" target="_blank">Solopreneur &mdash; Mindtricks AI</a> <span>2024&ndash;Present</span></h2>
 				                  <ul>
 				                  	<li>Building a SaaS AI product at <a href="https://www.mindtrick.ai" target="_blank">mindtrick.ai</a></li>
-				                  	<li>Full-stack: React (Next.js), Python (FastAPI), Go (Gin), and AWS ECS Fargate</li>
+				                  	<li>Full-stack: React (Next.js), Python (FastAPI), Go (Gin), and AWS ECS Fargate behind ELB. Google OAuth</li>
 				                  	<li>Chatbot, LangGraph agents, voice conversation, TTS, STT, and image generation</li>
+									<li>Background Jobs on AWS LAMBDA, PostgresDB, Pub Sub Notifications, Stripe Payment</li>
 				                  </ul>
 				               </div>
 				            </div>
@@ -311,13 +617,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
-				                  <h2><a href="#">Machine Learning Engineer at CWT</a> <span>Jan 2020 &ndash; Dec 2024</span></h2>
+				                  <h2><a href="#">Senior Machine Learning Engineer at CWT</a> <span>Jan 2020 &ndash; Dec 2024</span></h2>
 				                  <ul>
 				                  	<li>Travel Industry, Product &amp; Technology Division</li>
-				                  	<li>Air Personalisation &mdash; ML-driven personalisation of flight content for millions of travellers</li>
+				                  	<li>Air Personalisation &mdash; Fast Scala Library to sort flights for travelers</li>
 				                  	<li>Ticket Ranking Algorithm &mdash; relevance and ranking models for flight search results</li>
-				                  	<li>Travel Support Chatbot &mdash; NLP chatbot for automated traveller support at scale</li>
-				                  	<li>AWS Infrastructure &mdash; cloud-native ML pipelines on ECS, Lambda, and SageMaker</li>
+				                  	<li>Travel Support Chatbot &mdash; NLP chatbot for automated traveller support at scale &mdash; Lambda, DynamoDB, and SageMaker</li>
+				                  	<li>Team Big Data Infrastructured: Terraform, Spark EMR, S3, Jenkins. Github VC</li>
 				                  </ul>
 				               </div>
 				            </div>
@@ -382,16 +688,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 			</section>
 
-			<section class="colorlib-featured nt-compact-featured" data-section="featured">
+			<section class="colorlib-featured nt-compact-featured" data-section="blogs">
 			<div class="colorlib-narrow-content">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<h2 class="colorlib-heading animate-box">Featured Blogs</h2>
+						<h2 class="colorlib-heading nt-pixel-heading animate-box">Blog</h2>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<a href="https://www.kaggle.com/nicapotato" target="_blank" class="nt-blog-card nt-blog-card--kaggle">
+						<a href="https://www.kaggle.com/nicapotato/code" target="_blank" class="nt-blog-card nt-blog-card--kaggle">
 							<div class="nt-blog-card__icon">&#128202;</div>
 							<div class="nt-blog-card__platform">Kaggle</div>
 							<div class="nt-blog-card__title">Data Science &amp; ML Notebooks</div>
@@ -409,14 +715,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						</a>
 					</div>
 				</div>
-				<div class="row nt-games-heading-row">
+			</div>
+		</section>
+
+			<section class="colorlib-featured nt-compact-featured nt-compact-games" data-section="games">
+			<div class="colorlib-narrow-content">
+				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<h2 class="colorlib-heading animate-box">Featured Games</h2>
+						<h2 class="colorlib-heading nt-pixel-heading animate-box">Games</h2>
 					</div>
 				</div>
 				<div class="row nt-itch-row">
 					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-						<iframe title="Mindsweeper on itch.io" frameborder="0" src="https://itch.io/embed/4125365?bg_color=000000&amp;fg_color=ffde44&amp;link_color=fa5c5c&amp;border_color=333333" width="552" height="167" style="max-width: 100%;"><a href="https://nicapotato.itch.io/mindsweeper">Mindsweeper by nicapotato</a></iframe>
+						<div class="nt-pixel-embed">
+							<iframe title="Mindsweeper on itch.io" frameborder="0" src="https://itch.io/embed/4125365?bg_color=000000&amp;fg_color=ffde44&amp;link_color=fa5c5c&amp;border_color=333333" width="552" height="167" style="max-width: 100%;"><a href="https://nicapotato.itch.io/mindsweeper">Mindsweeper by nicapotato</a></iframe>
+						</div>
 					</div>
 				</div>
 			</div>
