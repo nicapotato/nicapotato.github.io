@@ -100,6 +100,33 @@
 		border-bottom: 2px solid rgba(255,255,255,0.5);
 		padding-bottom: 2px;
 	}
+	.colorlib-experience.nt-tight {
+		padding-bottom: 3em;
+	}
+	.colorlib-experience.nt-tight > .colorlib-narrow-content > .row:first-child .colorlib-heading {
+		margin-bottom: 1.25em;
+	}
+	.nt-compact-featured {
+		padding-top: 1.5em;
+		padding-bottom: 4em;
+	}
+	.nt-compact-featured .colorlib-heading {
+		margin-bottom: 1em;
+	}
+	@media screen and (max-width: 768px) {
+		.nt-compact-featured .colorlib-heading {
+			margin-bottom: 0.85em;
+		}
+	}
+	.nt-compact-featured .nt-blog-card {
+		margin-bottom: 12px;
+	}
+	.nt-compact-featured .nt-games-heading-row {
+		margin-top: 0.35em;
+	}
+	.nt-compact-featured .nt-itch-row {
+		margin-top: 0.25em;
+	}
 	</style>
 
 	<!-- Modernizr JS -->
@@ -118,13 +145,12 @@
 			<div class="text-center">
 				<div class="author-img" style="background-image: url(images/about.png);"></div>
 				<h1 id="colorlib-logo"><a href="index.html">Nick Brooks</a></h1>
-				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Tech Generalist</a> in London</span>
+				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Data Science and Engineering</a> in London</span>
 			</div>
 			<nav id="colorlib-main-menu" role="navigation" class="navbar">
 				<div id="navbar" class="collapse">
 					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
+						<li class="active"><a href="#" data-nav-section="experience">Home</a></li>
 <!-- 						<li><a href="#" data-nav-section="skills">Skills</a></li> -->
 					<li><a href="#" data-nav-section="experience">Experience</a></li>
 					<li><a href="#" data-nav-section="featured">Blogs</a></li>
@@ -144,24 +170,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		</aside>
 
 		<div id="colorlib-main">
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-									<h1>Welcome to my Website</h1>
-						   			<p>Hi, my name is Nick Brooks. I come from a economics background that got into coding through Data Science. Now I am a technologic generalist with cloud computing, web development, and systems programming languages (C Lang)
-						   			</p>
-						   			<p>Reach me at nick.brooks27 AT gmail.com</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
 <!-- 			<section class="colorlib-skills" data-section="skills">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -270,7 +278,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 			</section> -->
 
-			<section class="colorlib-experience" data-section="experience">
+			<section class="colorlib-experience nt-tight" data-section="experience">
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
@@ -374,11 +382,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 			</section>
 
-			<section class="colorlib-featured" data-section="featured">
+			<section class="colorlib-featured nt-compact-featured" data-section="featured">
 			<div class="colorlib-narrow-content">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<span class="heading-meta">Writing</span>
 						<h2 class="colorlib-heading animate-box">Featured Blogs</h2>
 					</div>
 				</div>
@@ -400,6 +407,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<div class="nt-blog-card__sub">Reflections on artificial intelligence, consciousness, surveillance, and the future of human-computer interaction.</div>
 							<div class="nt-blog-card__cta">Read articles &rarr;</div>
 						</a>
+					</div>
+				</div>
+				<div class="row nt-games-heading-row">
+					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+						<h2 class="colorlib-heading animate-box">Featured Games</h2>
+					</div>
+				</div>
+				<div class="row nt-itch-row">
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+						<iframe title="Mindsweeper on itch.io" frameborder="0" src="https://itch.io/embed/4125365?bg_color=000000&amp;fg_color=ffde44&amp;link_color=fa5c5c&amp;border_color=333333" width="552" height="167" style="max-width: 100%;"><a href="https://nicapotato.itch.io/mindsweeper">Mindsweeper by nicapotato</a></iframe>
 					</div>
 				</div>
 			</div>
