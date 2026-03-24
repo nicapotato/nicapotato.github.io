@@ -50,6 +50,7 @@
 	:root {
 		--nt-pixel-yellow: #ffde44;
 		--nt-pixel-ink: #0d0d0d;
+		--nt-exp-job-red: #e53935;
 		--nt-pixel-border: 4px solid var(--nt-pixel-ink);
 		/* 300px aside + 6px pixel border (border is outside width in default box model) */
 		--nt-main-offset: 306px;
@@ -128,10 +129,11 @@
 		font-variant-ligatures: none;
 		border-bottom: 4px solid var(--nt-pixel-ink);
 		padding-bottom: 1em;
-		display: inline-block;
+		display: block;
 		width: 100%;
 		max-width: 100%;
 		box-sizing: border-box;
+		text-align: left;
 	}
 	@media screen and (min-width: 768px) {
 		#colorlib-main h2.colorlib-heading.nt-pixel-heading {
@@ -332,6 +334,32 @@
 	}
 	.colorlib-experience.nt-tight > .colorlib-narrow-content > .row:first-child .colorlib-heading {
 		margin-bottom: 1.25em;
+	}
+	/* Employment: red accent + pencil icon */
+	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-job .timeline-entry-inner .timeline-icon {
+		background: var(--nt-exp-job-red) !important;
+		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+		-moz-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+		-webkit-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+	}
+	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-job .timeline-entry-inner .timeline-icon i {
+		color: #fff !important;
+	}
+	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-job .timeline-entry-inner .timeline-label {
+		border-left-color: var(--nt-exp-job-red) !important;
+	}
+	/* Mindtricks + itch: yellow accent */
+	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-yellow .timeline-entry-inner .timeline-icon {
+		background: var(--nt-pixel-yellow) !important;
+		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+		-moz-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+		-webkit-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+	}
+	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-yellow .timeline-entry-inner .timeline-icon i {
+		color: var(--nt-pixel-ink) !important;
+	}
+	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-yellow .timeline-entry-inner .timeline-label {
+		border-left-color: var(--nt-pixel-yellow) !important;
 	}
 	.nt-compact-featured {
 		padding-top: 1.5em;
@@ -597,7 +625,7 @@
 			<section class="colorlib-experience nt-tight" data-section="experience">
 				<div class="colorlib-narrow-content">
 					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
 							<h2 class="colorlib-heading nt-pixel-heading animate-box">Experience</h2>
 						</div>
 					</div>
@@ -605,9 +633,9 @@
 						<div class="col-md-12">
 			         <div class="timeline-centered">
 
-				         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+				         <article class="timeline-entry nt-exp-yellow animate-box" data-animate-effect="fadeInLeft">
 				            <div class="timeline-entry-inner">
-				               <div class="timeline-icon color-1">
+				               <div class="timeline-icon">
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
@@ -622,9 +650,9 @@
 				            </div>
 				         </article>
 
-				         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+				         <article class="timeline-entry nt-exp-job animate-box" data-animate-effect="fadeInRight">
 				            <div class="timeline-entry-inner">
-				               <div class="timeline-icon color-2">
+				               <div class="timeline-icon">
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
@@ -640,9 +668,9 @@
 				            </div>
 				         </article>
 
-				         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+				         <article class="timeline-entry nt-exp-yellow animate-box" data-animate-effect="fadeInLeft">
 				            <div class="timeline-entry-inner">
-				               <div class="timeline-icon color-3">
+				               <div class="timeline-icon">
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
@@ -656,9 +684,9 @@
 				            </div>
 				         </article>
 
-				         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+				         <article class="timeline-entry nt-exp-job animate-box" data-animate-effect="fadeInRight">
 				            <div class="timeline-entry-inner">
-				               <div class="timeline-icon color-1">
+				               <div class="timeline-icon">
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
@@ -672,9 +700,9 @@
 				            </div>
 				         </article>
 
-				         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+				         <article class="timeline-entry nt-exp-job animate-box" data-animate-effect="fadeInLeft">
 				            <div class="timeline-entry-inner">
-				               <div class="timeline-icon color-2">
+				               <div class="timeline-icon">
 				                  <i class="icon-pen2"></i>
 				               </div>
 				               <div class="timeline-label">
@@ -702,7 +730,7 @@
 			<section class="colorlib-featured nt-compact-featured" data-section="blogs">
 			<div class="colorlib-narrow-content">
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
 						<h2 class="colorlib-heading nt-pixel-heading animate-box">Blog</h2>
 					</div>
 				</div>
@@ -732,7 +760,7 @@
 			<section class="colorlib-featured nt-compact-featured nt-compact-games" data-section="games">
 			<div class="colorlib-narrow-content">
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
 						<h2 class="colorlib-heading nt-pixel-heading animate-box">Games</h2>
 					</div>
 				</div>
