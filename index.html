@@ -295,6 +295,17 @@
 		color: #fff;
 		border: var(--nt-pixel-border);
 	}
+	.nt-blog-card--itch {
+		background: linear-gradient(135deg, #fa5c5c 0%, #c0392b 100%);
+		color: #fff;
+		border-color: var(--nt-pixel-ink);
+	}
+	.nt-blog-card--stuff {
+		background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+		color: #fff;
+		border: var(--nt-pixel-border);
+		border-left: 8px solid var(--nt-pixel-yellow);
+	}
 	.nt-blog-card__icon { font-size: 2.6em; margin-bottom: 14px; }
 	.nt-blog-card__platform {
 		font-size: 0.72em;
@@ -418,8 +429,8 @@
 			<nav id="colorlib-main-menu" role="navigation" class="navbar">
 				<div id="navbar" class="collapse">
 					<ul>
-						<li class="active"><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="blogs">Blogs</a></li>
+						<li class="active"><a href="#" data-nav-section="portfolio">Portfolio</a></li>
+						<li><a href="#" data-nav-section="experience">Experience</a></li>
 						<li><a href="#" data-nav-section="games">Games</a></li>
 					</ul>
 				</div>
@@ -622,6 +633,54 @@
 				</div>
 			</section> -->
 
+			<section class="colorlib-featured nt-compact-featured" data-section="portfolio">
+			<div class="colorlib-narrow-content">
+				<div class="row">
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+						<h2 class="colorlib-heading nt-pixel-heading animate-box">Portfolio</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+						<a href="https://nicapotato.github.io/stuff/" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--stuff">
+							<div class="nt-blog-card__icon">&#128187;</div>
+							<div class="nt-blog-card__platform">nicapotato.github.io/stuff</div>
+							<div class="nt-blog-card__title">Software and Prototypes</div>
+							<div class="nt-blog-card__sub">Where I version and ship apps, games, and more &mdash; in the browser or as downloads for Windows, Mac, and Linux.</div>
+							<div class="nt-blog-card__cta">Open page &rarr;</div>
+						</a>
+					</div>
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						<a href="https://www.kaggle.com/nicapotato/code" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--kaggle">
+							<div class="nt-blog-card__icon">&#128202;</div>
+							<div class="nt-blog-card__platform">Kaggle</div>
+							<div class="nt-blog-card__title">Data Science &amp; ML Notebooks</div>
+							<div class="nt-blog-card__sub">Competition notebooks, deep learning experiments, and machine learning walkthroughs &mdash; EDA, feature engineering, mode selection, regression, categorical. Constrained optimization, Neural Networks, Traditional ML</div>
+							<div class="nt-blog-card__cta">Explore notebooks &rarr;</div>
+						</a>
+					</div>
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						<a href="https://nicapotato.itch.io/" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--itch">
+							<div class="nt-blog-card__icon">&#127918;</div>
+							<div class="nt-blog-card__platform">Itch.io</div>
+							<div class="nt-blog-card__title">Indie games &amp; releases</div>
+							<div class="nt-blog-card__sub">Play in the browser or download builds &mdash; puzzles, RPGs, experiments, and more.</div>
+							<div class="nt-blog-card__cta">Open itch.io &rarr;</div>
+						</a>
+					</div>
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+						<a href="https://medium.com/@nicapotato" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--medium">
+							<div class="nt-blog-card__icon">&#9997;&#65039;</div>
+							<div class="nt-blog-card__platform">Medium</div>
+							<div class="nt-blog-card__title">Essays on AI &amp; Technology</div>
+							<div class="nt-blog-card__sub">Reflections on artificial intelligence, consciousness, surveillance, and the future of human-computer interaction.</div>
+							<div class="nt-blog-card__cta">Read articles &rarr;</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
 			<section class="colorlib-experience nt-tight" data-section="experience">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -726,36 +785,6 @@
 				   </div>
 				</div>
 			</section>
-
-			<section class="colorlib-featured nt-compact-featured" data-section="blogs">
-			<div class="colorlib-narrow-content">
-				<div class="row">
-					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-						<h2 class="colorlib-heading nt-pixel-heading animate-box">Blog</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<a href="https://www.kaggle.com/nicapotato/code" target="_blank" class="nt-blog-card nt-blog-card--kaggle">
-							<div class="nt-blog-card__icon">&#128202;</div>
-							<div class="nt-blog-card__platform">Kaggle</div>
-							<div class="nt-blog-card__title">Data Science &amp; ML Notebooks</div>
-							<div class="nt-blog-card__sub">Competition notebooks, deep learning experiments, and machine learning walkthroughs &mdash; EDA, feature engineering, mode selection, regression, categorical. Constrained optimization, Neural Networks, Traditional ML</div>
-							<div class="nt-blog-card__cta">Explore notebooks &rarr;</div>
-						</a>
-					</div>
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-						<a href="https://medium.com/@nicapotato" target="_blank" class="nt-blog-card nt-blog-card--medium">
-							<div class="nt-blog-card__icon">&#9997;&#65039;</div>
-							<div class="nt-blog-card__platform">Medium</div>
-							<div class="nt-blog-card__title">Essays on AI &amp; Technology</div>
-							<div class="nt-blog-card__sub">Reflections on artificial intelligence, consciousness, surveillance, and the future of human-computer interaction.</div>
-							<div class="nt-blog-card__cta">Read articles &rarr;</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
 
 			<section class="colorlib-featured nt-compact-featured nt-compact-games" data-section="games">
 			<div class="colorlib-narrow-content">
