@@ -12,18 +12,18 @@
 
   <!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="Nick Brooks — Data Science &amp; Engineering"/>
-	<meta property="og:image" content="https://nicapotato.github.io/images/about.png"/>
+	<meta property="og:image" content="https://nicapotato.github.io/images/avatar.ico"/>
 	<meta property="og:url" content="https://nicapotato.github.io/"/>
 	<meta property="og:site_name" content="Nick Brooks"/>
 	<meta property="og:description" content="Data science and engineering in London. Mindtricks AI founder, ex–ML engineer at CWT, games and notebooks."/>
 	<meta name="twitter:title" content="Nick Brooks — Data Science &amp; Engineering" />
-	<meta name="twitter:image" content="https://nicapotato.github.io/images/about.png" />
+	<meta name="twitter:image" content="https://nicapotato.github.io/images/avatar.ico" />
 	<meta name="twitter:url" content="https://nicapotato.github.io/" />
 	<meta name="twitter:card" content="summary" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="icon.svg" type="image/svg+xml">
+	<link rel="shortcut icon" href="images/avatar.ico">
+	<link rel="icon" href="images/avatar.ico" type="image/x-icon">
 
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
@@ -83,6 +83,9 @@
 		border-radius: 0 !important;
 		border: var(--nt-pixel-border);
 		box-shadow: 6px 6px 0 rgba(13, 13, 13, 0.15);
+		/* Pixel SVG from images/icon.svg: avoid bilinear blur when scaled as background */
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
 	}
 	#colorlib-aside #colorlib-logo a {
 		font-family: "Press Start 2P", monospace;
@@ -422,7 +425,7 @@
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.png);"></div>
+				<div class="author-img" style="background-image: url(images/icon.svg);"></div>
 				<h1 id="colorlib-logo"><a href="index.html">Nick Brooks</a></h1>
 				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Data Science and Engineering</a><br>Full Stack Engineer<br><br>in London, UK<br>(Settled European)</span>
 			</div>

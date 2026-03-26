@@ -1,0 +1,10 @@
+# Sass
+.sass-cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE (add what you use)
+# .vscode/
+# *.swp
