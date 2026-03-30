@@ -100,6 +100,30 @@
 		font-kerning: none;
 		font-variant-ligatures: none;
 	}
+	/* Name + A.K.A read as one pixel-title block (grouped with Nick Brooks) */
+	#colorlib-aside .nt-aside-brand {
+		margin-bottom: 1.1em;
+	}
+	#colorlib-aside .nt-aside-brand #colorlib-logo {
+		margin-bottom: 0;
+	}
+	#colorlib-aside .nt-aside-brand .nt-pseudonym {
+		font-family: "Press Start 2P", monospace;
+		font-size: 11px;
+		line-height: 1.9;
+		letter-spacing: 0.05em;
+		font-weight: 400;
+		margin: 0.2em 0 0;
+		padding-right: 0.3em;
+		color: #000;
+		text-transform: uppercase;
+		text-align: center;
+		-webkit-font-smoothing: none;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeSpeed;
+		font-kerning: none;
+		font-variant-ligatures: none;
+	}
 	#colorlib-aside #colorlib-main-menu ul li a {
 		border-radius: 0;
 		border: 3px solid transparent;
@@ -426,7 +450,10 @@
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
 				<div class="author-img" style="background-image: url(images/icon.svg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Nick Brooks</a></h1>
+				<div class="nt-aside-brand">
+					<h1 id="colorlib-logo"><a href="index.html">Nick Brooks</a></h1>
+					<p class="nt-pseudonym">A.K.A NICAPOTATO</p>
+				</div>
 				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Data Science and Engineering</a><br>Full Stack Engineer<br><br>in London, UK<br>(Settled European)</span>
 			</div>
 			<nav id="colorlib-main-menu" role="navigation" class="navbar">
