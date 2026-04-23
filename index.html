@@ -56,6 +56,11 @@
 		--nt-main-offset: 306px;
 	}
 
+	/* Let the document scroll as one surface; avoid an extra nested scroll on the main column */
+	#colorlib-page {
+		overflow-x: hidden;
+		overflow-y: visible;
+	}
 	/* Full-bleed main column: flush to viewport right (template used max-width + auto margins) */
 	.container-wrap {
 		max-width: none !important;
@@ -66,6 +71,8 @@
 		width: calc(100% - var(--nt-main-offset)) !important;
 		max-width: none !important;
 		float: right;
+		overflow-x: hidden;
+		overflow-y: visible;
 	}
 	@media screen and (max-width: 768px) {
 		#colorlib-main {
@@ -75,6 +82,8 @@
 
 	#colorlib-aside {
 		border-right: 6px solid var(--nt-pixel-ink);
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 	#colorlib-aside .position {
 		line-height: 1.55;
@@ -169,13 +178,13 @@
 	}
 
 	.nt-aside-links {
-		margin-top: 1.75em;
-		padding: 0 1.1em 1.5em;
+		margin-top: 1.1em;
+		padding: 0 0.85em 0.75em;
 		text-align: left;
 		border-top: 3px solid var(--nt-pixel-ink);
 	}
 	.nt-aside-links__label {
-		margin: 1em 0 0.85em;
+		margin: 0.45em 0 0.35em;
 		font-size: 10px;
 		font-weight: 700;
 		letter-spacing: 0.14em;
@@ -190,9 +199,9 @@
 		width: 100%;
 	}
 	.nt-aside-links li {
-		margin: 0 0 0.85em 0;
+		margin: 0 0 0.15em 0;
 		padding: 0;
-		line-height: 1.3;
+		line-height: 1.25;
 	}
 	.nt-aside-links a {
 		display: block;
@@ -201,7 +210,7 @@
 		color: rgba(0, 0, 0, 0.78);
 		border: 2px solid transparent;
 		border-radius: 0;
-		padding: 0.5em 0.35em;
+		padding: 0.2em 0.3em;
 		transition:
 			color 0.15s ease,
 			border-color 0.15s ease,
@@ -222,16 +231,16 @@
 	}
 	.nt-aside-links__row {
 		display: flex;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: flex-start;
-		gap: 0.55em;
+		gap: 0.45em;
 		text-align: left;
 	}
 	.nt-aside-links__ico {
 		flex: 0 0 1.15em;
 		width: 1.15em;
 		height: 1.15em;
-		margin-top: 0.15em;
+		margin-top: 0;
 		color: rgba(0, 0, 0, 0.55);
 	}
 	.nt-aside-links__ico i {
@@ -256,13 +265,13 @@
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: rgba(0, 0, 0, 0.5);
-		margin-bottom: 0.2em;
+		margin-bottom: 0.05em;
 	}
 	.nt-aside-links__title {
 		display: block;
 		font-size: 11px;
 		font-weight: 600;
-		line-height: 1.35;
+		line-height: 1.28;
 		color: inherit;
 	}
 

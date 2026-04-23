@@ -177,7 +177,8 @@ figure {
 
 #colorlib-page {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     position: relative;
 }
 #colorlib-aside {
@@ -187,7 +188,8 @@ figure {
 
 	width: 300px;
 	position: fixed;
-	overflow-y: scroll;
+	overflow-x: hidden;
+	overflow-y: auto;
 	z-index: 1001;
 	background: $brand-gray;
 	@include transition(.5s);
@@ -345,6 +347,8 @@ figure {
 #colorlib-main {
 	width: calc(100% - 300px);
 	float: right;
+	overflow-x: hidden;
+	overflow-y: visible;
 	@include transition(.5s);
 	@media screen and (max-width: $screen-sm) {
 		width: 100%;
