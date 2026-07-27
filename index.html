@@ -325,9 +325,9 @@
 		text-decoration: none;
 	}
 	.nt-blog-card--kaggle {
-		background: linear-gradient(135deg, #20beff 0%, #1565c0 100%);
+		background: linear-gradient(135deg, #6366f1 0%, #4338ca 55%, #312e81 100%);
 		color: #fff;
-		border-left-color: #0a3d7a;
+		border-left-color: #1e1b4b;
 	}
 	.nt-blog-card--substack {
 		background: linear-gradient(135deg, #ff6719 0%, #c2410c 100%);
@@ -345,9 +345,32 @@
 		border-left-color: #0c1018;
 	}
 	.nt-blog-card--mindtricks {
-		background: linear-gradient(135deg, #6366f1 0%, #4338ca 55%, #312e81 100%);
-		color: #fff;
-		border-left-color: #1e1b4b;
+		background: linear-gradient(135deg, #f7f7f8 0%, #e8e8ec 100%);
+		color: #1a1a1a;
+		border-left-color: #c4c4cc;
+	}
+	.nt-blog-card--mindtricks .nt-blog-card__platform,
+	.nt-blog-card--mindtricks .nt-blog-card__title,
+	.nt-blog-card--mindtricks .nt-blog-card__cta {
+		color: #1a1a1a;
+	}
+	.nt-blog-card--mindtricks .nt-blog-card__sub {
+		color: rgba(26, 26, 26, 0.75);
+	}
+	.nt-blog-card--mindtricks .nt-blog-card__cta {
+		border-bottom-color: rgba(26, 26, 26, 0.35);
+	}
+	.nt-blog-card__logo {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		height: 42px;
+		margin-bottom: 14px;
+		image-rendering: pixelated;
+		image-rendering: crisp-edges;
+	}
+	.nt-blog-card__logo--stuff {
+		height: 48px;
 	}
 	.nt-blog-card__platform {
 		font-size: 0.72em;
@@ -725,7 +748,7 @@
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
 						<a href="https://www.mindtricks.ai" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--mindtricks">
 							<div class="nt-blog-card__platform">www.mindtricks.ai</div>
-							<div class="nt-blog-card__title">MINDTRICKS.AI</div>
+							<img class="nt-blog-card__logo" src="images/mindtricks-title-logo.png" alt="MINDTRICKS" width="198" height="35" />
 							<div class="nt-blog-card__sub">Generative AI &mdash; LLM chat, research workflows, and product tooling.</div>
 							<div class="nt-blog-card__cta">Visit site &rarr;</div>
 						</a>
@@ -733,7 +756,7 @@
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<a href="https://stuff.nicapotato.com" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--stuff">
 							<div class="nt-blog-card__platform">stuff.nicapotato.com</div>
-							<div class="nt-blog-card__title">Software and Prototypes</div>
+							<img class="nt-blog-card__logo nt-blog-card__logo--stuff" src="images/stuff-title.png" alt="STUFF" width="232" height="59" />
 							<div class="nt-blog-card__sub">Where I version and ship apps, games, and more &mdash; in the browser or as downloads for Windows, Mac, and Linux.</div>
 							<div class="nt-blog-card__cta">Open page &rarr;</div>
 						</a>
