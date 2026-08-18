@@ -5,6 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Nick Brooks — Data Science &amp; Engineering | London</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+	<script>
+	(function () {
+		var stored = localStorage.getItem('nt-theme');
+		var theme = (stored === 'light' || stored === 'dark')
+			? stored
+			: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		document.documentElement.setAttribute('data-theme', theme);
+	})();
+	</script>
 	<meta name="description" content="Nick Brooks — Data science and engineering in London, UK. Founder of Mindtricks AI (full-stack SaaS). Former ML engineer at CWT; data scientist at Collinson. Indie games, Kaggle notebooks, writing on AI." />
 	<meta name="keywords" content="Nick Brooks, data science, machine learning, London, Mindtricks AI, ML engineer" />
 	<meta name="author" content="Nick Brooks" />
@@ -51,9 +61,45 @@
 		--nt-pixel-yellow: #ffde44;
 		--nt-pixel-ink: #0d0d0d;
 		--nt-exp-job-red: #e53935;
-		--nt-pixel-border: 4px solid var(--nt-pixel-ink);
+		--nt-page-bg: #fff;
+		--nt-sidebar-bg: #f2f3f7;
+		--nt-card-bg: #fff;
+		--nt-text: rgba(0, 0, 0, 0.7);
+		--nt-heading: #000;
+		--nt-muted: rgba(0, 0, 0, 0.5);
+		--nt-muted-label: rgba(0, 0, 0, 0.45);
+		--nt-link: rgba(0, 0, 0, 0.78);
+		--nt-border: #0d0d0d;
+		--nt-hover-bg: rgba(255, 222, 68, 0.25);
+		--nt-shadow: rgba(13, 13, 13, 0.2);
+		--nt-pixel-border: 4px solid var(--nt-border);
 		/* 300px aside + 6px pixel border (border is outside width in default box model) */
 		--nt-main-offset: 306px;
+	}
+	html {
+		color-scheme: light;
+	}
+	html[data-theme="dark"] {
+		color-scheme: dark;
+		--nt-page-bg: #111;
+		--nt-sidebar-bg: #171717;
+		--nt-card-bg: #1c1c1c;
+		--nt-text: rgba(255, 255, 255, 0.78);
+		--nt-heading: #f5f5f5;
+		--nt-muted: rgba(255, 255, 255, 0.5);
+		--nt-muted-label: rgba(255, 255, 255, 0.45);
+		--nt-link: rgba(255, 255, 255, 0.85);
+		--nt-border: #e8e8e8;
+		--nt-hover-bg: rgba(255, 222, 68, 0.22);
+		--nt-shadow: rgba(0, 0, 0, 0.45);
+	}
+	body {
+		background: var(--nt-page-bg);
+		color: var(--nt-text);
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		color: var(--nt-heading);
 	}
 
 	/* Let the document scroll as one surface; avoid an extra nested scroll on the main column */
@@ -81,17 +127,23 @@
 	}
 
 	#colorlib-aside {
-		border-right: 6px solid var(--nt-pixel-ink);
+		background: var(--nt-sidebar-bg);
+		border-right: 6px solid var(--nt-border);
 		overflow-x: hidden;
 		overflow-y: auto;
+		transition: background-color 0.2s ease;
+	}
+	body.offcanvas #colorlib-aside {
+		background: var(--nt-sidebar-bg);
 	}
 	#colorlib-aside .position {
 		line-height: 1.55;
+		color: var(--nt-text);
 	}
 	#colorlib-aside .author-img {
 		border-radius: 0 !important;
 		border: var(--nt-pixel-border);
-		box-shadow: 6px 6px 0 rgba(13, 13, 13, 0.15);
+		box-shadow: 6px 6px 0 var(--nt-shadow);
 		/* Pixel SVG from images/icon.svg: avoid bilinear blur when scaled as background */
 		image-rendering: crisp-edges;
 		image-rendering: pixelated;
@@ -103,6 +155,7 @@
 		line-height: 1.9;
 		letter-spacing: 0.05em;
 		font-weight: 400;
+		color: var(--nt-heading);
 		-webkit-font-smoothing: none;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeSpeed;
@@ -124,7 +177,7 @@
 		font-weight: 400;
 		margin: 0.2em 0 0;
 		padding-right: 0.3em;
-		color: #000;
+		color: var(--nt-heading);
 		text-transform: uppercase;
 		text-align: center;
 		-webkit-font-smoothing: none;
@@ -140,6 +193,10 @@
 		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
+		color: var(--nt-text);
+	}
+	#colorlib-aside #colorlib-main-menu ul li a:hover {
+		color: var(--nt-heading);
 	}
 	#colorlib-aside #colorlib-main-menu ul li.active > a {
 		border-color: var(--nt-pixel-ink);
@@ -163,7 +220,7 @@
 		text-rendering: optimizeSpeed;
 		font-kerning: none;
 		font-variant-ligatures: none;
-		border-bottom: 4px solid var(--nt-pixel-ink);
+		border-bottom: 4px solid var(--nt-border);
 		padding-bottom: 1em;
 		display: block;
 		width: 100%;
@@ -181,7 +238,7 @@
 		margin-top: 1.1em;
 		padding: 0 0.85em 0.75em;
 		text-align: left;
-		border-top: 3px solid var(--nt-pixel-ink);
+		border-top: 3px solid var(--nt-border);
 	}
 	.nt-aside-links__label {
 		margin: 0.45em 0 0.35em;
@@ -189,7 +246,7 @@
 		font-weight: 700;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
-		color: rgba(0, 0, 0, 0.45);
+		color: var(--nt-muted-label);
 		font-family: Quicksand, Arial, sans-serif;
 	}
 	.nt-aside-links ul {
@@ -207,7 +264,7 @@
 		display: block;
 		font-family: Quicksand, Arial, sans-serif;
 		text-decoration: none;
-		color: rgba(0, 0, 0, 0.78);
+		color: var(--nt-link);
 		border: 2px solid transparent;
 		border-radius: 0;
 		padding: 0.2em 0.3em;
@@ -218,16 +275,16 @@
 	}
 	.nt-aside-links a:hover,
 	.nt-aside-links a:focus {
-		color: #000;
-		border-color: var(--nt-pixel-ink);
-		background: rgba(255, 222, 68, 0.25);
+		color: var(--nt-heading);
+		border-color: var(--nt-border);
+		background: var(--nt-hover-bg);
 		outline: none;
 	}
 	.nt-aside-links a:hover .nt-aside-links__platform,
 	.nt-aside-links a:focus .nt-aside-links__platform,
 	.nt-aside-links a:hover .nt-aside-links__ico,
 	.nt-aside-links a:focus .nt-aside-links__ico {
-		color: rgba(0, 0, 0, 0.72);
+		color: var(--nt-text);
 	}
 	.nt-aside-links__row {
 		display: flex;
@@ -241,7 +298,7 @@
 		width: 1.15em;
 		height: 1.15em;
 		margin-top: 0;
-		color: rgba(0, 0, 0, 0.55);
+		color: var(--nt-muted);
 	}
 	.nt-aside-links__ico i {
 		font-size: 1.05em;
@@ -264,7 +321,7 @@
 		font-weight: 800;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: rgba(0, 0, 0, 0.5);
+		color: var(--nt-muted);
 		margin-bottom: 0.05em;
 	}
 	.nt-aside-links__title {
@@ -277,7 +334,7 @@
 
 	.timeline-centered:before {
 		width: 6px;
-		background: var(--nt-pixel-ink);
+		background: var(--nt-border);
 		margin-left: 27px;
 	}
 	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
@@ -285,21 +342,26 @@
 		width: 44px;
 		height: 44px;
 		line-height: 44px;
-		border: 3px solid var(--nt-pixel-ink);
-		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2);
-		-moz-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2);
-		-webkit-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2);
+		border: 3px solid var(--nt-border);
+		box-shadow: 4px 4px 0 var(--nt-shadow);
+		-moz-box-shadow: 4px 4px 0 var(--nt-shadow);
+		-webkit-box-shadow: 4px 4px 0 var(--nt-shadow);
 	}
 	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-none {
 		border-radius: 0 !important;
-		border: 3px solid #ccc;
+		border: 3px solid var(--nt-muted);
 	}
 	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
-		background: #fff;
+		background: var(--nt-card-bg);
 		border: var(--nt-pixel-border);
 		border-left: 8px solid var(--nt-pixel-yellow);
 		border-radius: 0;
-		box-shadow: 6px 6px 0 rgba(13, 13, 13, 0.12);
+		box-shadow: 6px 6px 0 var(--nt-shadow);
+		color: var(--nt-text);
+	}
+	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2,
+	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {
+		color: var(--nt-heading);
 	}
 	.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
 		display: none;
@@ -316,12 +378,12 @@
 		border: var(--nt-pixel-border);
 		border-left-width: 8px;
 		border-left-style: solid;
-		border-left-color: var(--nt-pixel-ink);
-		box-shadow: 8px 8px 0 rgba(13, 13, 13, 0.2);
+		border-left-color: var(--nt-border);
+		box-shadow: 8px 8px 0 var(--nt-shadow);
 	}
 	.nt-blog-card:hover {
 		transform: translate(2px, 2px);
-		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.25);
+		box-shadow: 4px 4px 0 var(--nt-shadow);
 		text-decoration: none;
 	}
 	.nt-blog-card--kaggle {
@@ -426,9 +488,9 @@
 	/* Employment: red accent + pencil icon */
 	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-job .timeline-entry-inner .timeline-icon {
 		background: var(--nt-exp-job-red) !important;
-		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
-		-moz-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
-		-webkit-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+		box-shadow: 4px 4px 0 var(--nt-shadow) !important;
+		-moz-box-shadow: 4px 4px 0 var(--nt-shadow) !important;
+		-webkit-box-shadow: 4px 4px 0 var(--nt-shadow) !important;
 	}
 	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-job .timeline-entry-inner .timeline-icon i {
 		color: #fff !important;
@@ -439,9 +501,9 @@
 	/* Mindtricks + itch: yellow accent */
 	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-yellow .timeline-entry-inner .timeline-icon {
 		background: var(--nt-pixel-yellow) !important;
-		box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
-		-moz-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
-		-webkit-box-shadow: 4px 4px 0 rgba(13, 13, 13, 0.2) !important;
+		box-shadow: 4px 4px 0 var(--nt-shadow) !important;
+		-moz-box-shadow: 4px 4px 0 var(--nt-shadow) !important;
+		-webkit-box-shadow: 4px 4px 0 var(--nt-shadow) !important;
 	}
 	.colorlib-experience .timeline-centered .timeline-entry.nt-exp-yellow .timeline-entry-inner .timeline-icon i {
 		color: var(--nt-pixel-ink) !important;
@@ -499,7 +561,7 @@
 	}
 	.nt-pixel-embed {
 		border: var(--nt-pixel-border);
-		box-shadow: 8px 8px 0 rgba(13, 13, 13, 0.12);
+		box-shadow: 8px 8px 0 var(--nt-shadow);
 		display: inline-block;
 		line-height: 0;
 		max-width: 100%;
@@ -507,6 +569,102 @@
 	}
 	.nt-pixel-embed iframe {
 		display: block;
+	}
+
+	.colorlib-nav-toggle i {
+		background: var(--nt-heading);
+	}
+	.colorlib-nav-toggle i::before,
+	.colorlib-nav-toggle i::after,
+	.colorlib-nav-toggle.active i::before,
+	.colorlib-nav-toggle.active i::after,
+	.colorlib-nav-toggle.dark i::before,
+	.colorlib-nav-toggle.dark i::after,
+	.colorlib-nav-toggle.dark.active i::before,
+	.colorlib-nav-toggle.dark.active i::after {
+		background: var(--nt-heading);
+	}
+	.colorlib-nav-toggle.active i {
+		background: transparent;
+	}
+
+	.nt-theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.45em;
+		margin: 0;
+		font-family: Quicksand, Arial, sans-serif;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		font-size: 11px;
+		line-height: 1;
+		border: 3px solid var(--nt-border);
+		background: var(--nt-page-bg);
+		color: var(--nt-heading);
+		border-radius: 0;
+		padding: 0.5em 0.75em;
+		cursor: pointer;
+		box-shadow: 3px 3px 0 var(--nt-shadow);
+		transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.nt-theme-toggle:hover,
+	.nt-theme-toggle:focus {
+		background: var(--nt-pixel-yellow);
+		color: var(--nt-pixel-ink);
+		border-color: var(--nt-pixel-ink);
+		outline: none;
+	}
+	.nt-theme-toggle__icon {
+		width: 1.15em;
+		height: 1.15em;
+		flex: 0 0 1.15em;
+	}
+	.nt-theme-toggle__icon svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		fill: currentColor;
+	}
+	.nt-theme-toggle__icon--sun {
+		display: none;
+	}
+	html[data-theme="dark"] .nt-theme-toggle__icon--sun {
+		display: block;
+	}
+	html[data-theme="dark"] .nt-theme-toggle__icon--moon {
+		display: none;
+	}
+	.nt-theme-toggle--aside {
+		width: calc(100% - 1.7em);
+		margin: 0.65em 0.85em 1.1em;
+	}
+	.nt-theme-toggle--mobile {
+		display: none;
+		position: fixed;
+		top: 12px;
+		right: 12px;
+		z-index: 10000;
+		width: 44px;
+		height: 44px;
+		padding: 0;
+	}
+	.nt-theme-toggle--mobile .nt-theme-toggle__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+	@media screen and (max-width: 768px) {
+		.nt-theme-toggle--mobile {
+			display: inline-flex;
+		}
 	}
 
 	/* Override template: .animate-box was opacity:0 until Waypoints + staggered JS — bad for scrapers and first paint */
@@ -527,6 +685,15 @@
 	<div id="colorlib-page">
 		<div class="container-wrap">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+		<button type="button" class="nt-theme-toggle nt-theme-toggle--mobile" aria-label="Switch to dark mode" aria-pressed="false">
+			<span class="nt-theme-toggle__icon nt-theme-toggle__icon--moon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+			</span>
+			<span class="nt-theme-toggle__icon nt-theme-toggle__icon--sun" aria-hidden="true">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5h2v3h-2V2zm0 17h2v3h-2v-3zM4.22 4.22l1.42-1.42 2.12 2.12-1.42 1.42-2.12-2.12zm12.02 12.02l1.42-1.42 2.12 2.12-1.42 1.42-2.12-2.12zM2 11h3v2H2v-2zm17 0h3v2h-3v-2zM4.22 19.78l2.12-2.12 1.42 1.42-2.12 2.12-1.42-1.42zm12.02-12.02l2.12-2.12 1.42 1.42-2.12 2.12-1.42-1.42z"/></svg>
+			</span>
+			<span class="nt-theme-toggle__label">Dark</span>
+		</button>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
 				<div class="author-img" style="background-image: url(images/icon.svg);"></div>
@@ -623,6 +790,15 @@
 					</li>
 				</ul>
 			</div>
+			<button type="button" class="nt-theme-toggle nt-theme-toggle--aside" aria-label="Switch to dark mode" aria-pressed="false">
+				<span class="nt-theme-toggle__icon nt-theme-toggle__icon--moon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+				</span>
+				<span class="nt-theme-toggle__icon nt-theme-toggle__icon--sun" aria-hidden="true">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5h2v3h-2V2zm0 17h2v3h-2v-3zM4.22 4.22l1.42-1.42 2.12 2.12-1.42 1.42-2.12-2.12zm12.02 12.02l1.42-1.42 2.12 2.12-1.42 1.42-2.12-2.12zM2 11h3v2H2v-2zm17 0h3v2h-3v-2zM4.22 19.78l2.12-2.12 1.42 1.42-2.12 2.12-1.42-1.42zm12.02-12.02l2.12-2.12 1.42 1.42-2.12 2.12-1.42-1.42z"/></svg>
+				</span>
+				<span class="nt-theme-toggle__label">Dark</span>
+			</button>
 		</aside>
 		<div id="colorlib-main">
 <!-- 			<section class="colorlib-skills" data-section="skills">
@@ -806,7 +982,7 @@
 				                  <ul>
 				                  	<li>Building a SaaS AI product at <a href="https://www.mindtricks.ai" target="_blank">mindtricks.ai</a></li>
 				                  	<li>Full-stack: React (Next.js), Python (FastAPI), Go (Gin), and AWS ECS Fargate behind ELB. Google OAuth</li>
-				                  	<li>Chatbot, LangGraph agents, voice conversation, TTS, STT, and image generation</li>
+				                  	<li>Chatbot, <a href="https://www.mindtricks.ai/docs/agentic/basic" target="_blank">LangGraph agents</a>, voice conversation, TTS, STT, and image generation</li>
 									<li>Background Jobs on AWS LAMBDA, PostgresDB, Pub Sub Notifications, Stripe Payment</li>
 				                  </ul>
 				               </div>
@@ -1021,6 +1197,7 @@
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+	<script src="js/theme.js"></script>
 	<script src="js/analytics.js"></script>
 
 	<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "676bb86b6a4e4cfe9a741feae2134229"}'></script><!-- End Cloudflare Web Analytics -->
