@@ -526,17 +526,17 @@
 	.nt-compact-featured .nt-blog-card {
 		margin-bottom: 12px;
 	}
-	/* Equal-height portfolio cards (pairs align; CTA pinned to bottom) */
-	.nt-portfolio-row {
+	/* Equal-height 2-col grid (portfolio cards + itch embeds) */
+	.nt-two-col-row {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.nt-portfolio-row > .col-md-6 {
+	.nt-two-col-row > .col-md-6 {
 		float: none;
 		display: flex;
 		flex-direction: column;
 	}
-	.nt-portfolio-row .nt-blog-card {
+	.nt-two-col-row .nt-blog-card {
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 auto;
@@ -544,20 +544,18 @@
 		width: 100%;
 		margin-bottom: 24px;
 	}
-	.nt-portfolio-row .nt-blog-card__sub {
+	.nt-two-col-row .nt-blog-card__sub {
 		flex: 1 1 auto;
 		margin-bottom: 0;
 	}
-	.nt-portfolio-row .nt-blog-card__cta {
+	.nt-two-col-row .nt-blog-card__cta {
 		margin-top: auto;
 		padding-top: 20px;
 	}
-	.nt-compact-games .nt-itch-row {
-		margin-top: 0.25em;
-		margin-bottom: 0.85em;
-	}
-	.nt-compact-games .nt-itch-row:last-child {
-		margin-bottom: 0;
+	.nt-two-col-row .nt-pixel-embed {
+		display: block;
+		width: 100%;
+		margin-bottom: 24px;
 	}
 	.nt-pixel-embed {
 		border: var(--nt-pixel-border);
@@ -566,9 +564,12 @@
 		line-height: 0;
 		max-width: 100%;
 		vertical-align: top;
+		box-sizing: border-box;
 	}
 	.nt-pixel-embed iframe {
 		display: block;
+		width: 100%;
+		max-width: 100%;
 	}
 
 	.colorlib-nav-toggle i {
@@ -916,7 +917,7 @@
 						<h2 class="colorlib-heading nt-pixel-heading animate-box">Portfolio</h2>
 					</div>
 				</div>
-				<div class="row nt-portfolio-row">
+				<div class="row nt-two-col-row">
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
 						<a href="https://www.mindtricks.ai" target="_blank" rel="noopener noreferrer" class="nt-blog-card nt-blog-card--mindtricks" data-portfolio-item="mindtricks">
 							<div class="nt-blog-card__platform">www.mindtricks.ai</div>
@@ -1073,17 +1074,15 @@
 						<h2 class="colorlib-heading nt-pixel-heading animate-box">Apps</h2>
 					</div>
 				</div>
-				<div class="row nt-itch-row">
-					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+				<div class="row nt-two-col-row">
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="nt-pixel-embed">
-							<iframe title="RockNRoller on itch.io" frameborder="0" src="https://itch.io/embed/4453671" width="552" height="167" style="max-width: 100%;"><a href="https://nicapotato.itch.io/rocknroller">RockNRoller by nicapotato</a></iframe>
+							<iframe title="RockNRoller on itch.io" frameborder="0" loading="lazy" data-itch-embed="4453671" src="https://itch.io/embed/4453671?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/rocknroller">RockNRoller by nicapotato</a></iframe>
 						</div>
 					</div>
-				</div>
-				<div class="row nt-itch-row">
-					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
 						<div class="nt-pixel-embed">
-							<iframe title="Demucs MLX Audio Stemmer App on itch.io" frameborder="0" src="https://itch.io/embed/4869317" width="552" height="167" style="max-width: 100%;"><a href="https://nicapotato.itch.io/demucs-mlx-app">Demucs MLX Audio Stemmer App by nicapotato</a></iframe>
+							<iframe title="Demucs MLX Audio Stemmer App on itch.io" frameborder="0" loading="lazy" data-itch-embed="4869317" src="https://itch.io/embed/4869317?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/demucs-mlx-app">Demucs MLX Audio Stemmer App by nicapotato</a></iframe>
 						</div>
 					</div>
 				</div>
@@ -1097,10 +1096,10 @@
 						<h2 class="colorlib-heading nt-pixel-heading animate-box">Games</h2>
 					</div>
 				</div>
-				<div class="row nt-itch-row">
-					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+				<div class="row nt-two-col-row">
+					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="nt-pixel-embed">
-							<iframe title="Mindsweeper on itch.io" frameborder="0" src="https://itch.io/embed/4125365?bg_color=000000&amp;fg_color=ffde44&amp;link_color=fa5c5c&amp;border_color=333333" width="552" height="167" style="max-width: 100%;"><a href="https://nicapotato.itch.io/mindsweeper">Mindsweeper by nicapotato</a></iframe>
+							<iframe title="Mindsweeper on itch.io" frameborder="0" loading="lazy" data-itch-embed="4125365" src="https://itch.io/embed/4125365?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/mindsweeper">Mindsweeper by nicapotato</a></iframe>
 						</div>
 					</div>
 				</div>
