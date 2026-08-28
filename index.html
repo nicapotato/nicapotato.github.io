@@ -557,6 +557,158 @@
 		width: 100%;
 		margin-bottom: 24px;
 	}
+	.nt-two-col-row .nt-app-card {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	.nt-two-col-row .nt-app-card .nt-pixel-embed {
+		margin-bottom: 0;
+	}
+	.nt-app-note {
+		margin: 0.85em 0 0;
+		font-size: 13px;
+		line-height: 1.55;
+		color: var(--nt-muted);
+	}
+	.nt-app-note strong {
+		color: var(--nt-text);
+		font-weight: 700;
+	}
+	.nt-trailer-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.65em;
+		width: 100%;
+		margin: 0.85em 0 0;
+		padding: 0.85em 0.9em;
+		box-sizing: border-box;
+		font-family: "Press Start 2P", monospace;
+		font-size: 10px;
+		line-height: 1.4;
+		letter-spacing: 0.08em;
+		font-weight: 400;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		color: var(--nt-pixel-ink);
+		background: var(--nt-pixel-yellow);
+		border: 4px solid var(--nt-border);
+		border-radius: 0;
+		box-shadow: 6px 6px 0 var(--nt-shadow);
+		cursor: pointer;
+		-webkit-font-smoothing: none;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeSpeed;
+		transition: transform 0.12s ease, box-shadow 0.12s ease;
+	}
+	.nt-trailer-btn:hover,
+	.nt-trailer-btn:focus {
+		color: var(--nt-pixel-ink);
+		text-decoration: none;
+		transform: translate(2px, 2px);
+		box-shadow: 4px 4px 0 var(--nt-shadow);
+		outline: none;
+	}
+	.nt-trailer-btn:focus-visible {
+		outline: 3px solid var(--nt-heading);
+		outline-offset: 3px;
+	}
+	.nt-trailer-btn__icon {
+		flex: 0 0 1.1em;
+		width: 1.1em;
+		height: 1.1em;
+	}
+	.nt-trailer-btn__icon svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		fill: currentColor;
+	}
+	.nt-trailer-modal {
+		position: fixed;
+		inset: 0;
+		z-index: 20000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1.25rem;
+	}
+	.nt-trailer-modal[hidden] {
+		display: none;
+	}
+	.nt-trailer-modal__backdrop {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.78);
+	}
+	.nt-trailer-modal__dialog {
+		position: relative;
+		width: min(960px, 100%);
+		background: var(--nt-card-bg);
+		border: var(--nt-pixel-border);
+		box-shadow: 10px 10px 0 var(--nt-shadow);
+	}
+	.nt-trailer-modal__bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1em;
+		padding: 0.65em 0.75em;
+		border-bottom: 4px solid var(--nt-border);
+		background: var(--nt-pixel-yellow);
+	}
+	.nt-trailer-modal__title {
+		margin: 0;
+		font-family: "Press Start 2P", monospace;
+		font-size: 10px;
+		line-height: 1.7;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--nt-pixel-ink);
+		-webkit-font-smoothing: none;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	.nt-trailer-modal__close {
+		flex: 0 0 auto;
+		margin: 0;
+		padding: 0.35em 0.55em;
+		font-family: "Press Start 2P", monospace;
+		font-size: 9px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--nt-pixel-ink);
+		background: var(--nt-page-bg);
+		border: 3px solid var(--nt-pixel-ink);
+		border-radius: 0;
+		cursor: pointer;
+		box-shadow: 3px 3px 0 var(--nt-shadow);
+	}
+	.nt-trailer-modal__close:hover,
+	.nt-trailer-modal__close:focus {
+		background: var(--nt-pixel-ink);
+		color: var(--nt-pixel-yellow);
+		outline: none;
+	}
+	.nt-trailer-modal__frame {
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%;
+		line-height: 0;
+		background: #000;
+	}
+	.nt-trailer-modal__frame iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	body.nt-trailer-open {
+		overflow: hidden;
+	}
 	.nt-pixel-embed {
 		border: var(--nt-pixel-border);
 		box-shadow: 8px 8px 0 var(--nt-shadow);
@@ -1076,13 +1228,24 @@
 				</div>
 				<div class="row nt-two-col-row">
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<div class="nt-pixel-embed">
-							<iframe title="RockNRoller on itch.io" frameborder="0" loading="lazy" data-itch-embed="4453671" src="https://itch.io/embed/4453671?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/rocknroller">RockNRoller by nicapotato</a></iframe>
+						<div class="nt-app-card">
+							<div class="nt-pixel-embed">
+								<iframe title="RockNRoller on itch.io" frameborder="0" loading="lazy" data-itch-embed="4453671" src="https://itch.io/embed/4453671?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/rocknroller">RockNRoller by nicapotato</a></iframe>
+							</div>
+							<a class="nt-trailer-btn" href="https://www.youtube.com/watch?v=k--zDnyUZvs" target="_blank" rel="noopener noreferrer" data-youtube-id="k--zDnyUZvs" data-youtube-title="RocknRoller trailer">
+								<span class="nt-trailer-btn__icon" aria-hidden="true">
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+								</span>
+								Watch trailer
+							</a>
 						</div>
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-						<div class="nt-pixel-embed">
-							<iframe title="Demucs MLX Audio Stemmer App on itch.io" frameborder="0" loading="lazy" data-itch-embed="4869317" src="https://itch.io/embed/4869317?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/demucs-mlx-app">Demucs MLX Audio Stemmer App by nicapotato</a></iframe>
+						<div class="nt-app-card">
+							<div class="nt-pixel-embed">
+								<iframe title="Demucs MLX Audio Stemmer App on itch.io" frameborder="0" loading="lazy" data-itch-embed="4869317" src="https://itch.io/embed/4869317?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/demucs-mlx-app">Demucs MLX Audio Stemmer App by nicapotato</a></iframe>
+							</div>
+							<p class="nt-app-note">Splits songs into six stems (drums, bass, other, vocals, guitar, piano) from MP3/WAV or Rocksmith PSARC. Same raylib GUI on both platforms; the worker differs. <strong>macOS Apple Silicon</strong> uses MLX + Metal (~132&nbsp;MB). <strong>Windows x64</strong> ships official Meta Demucs + PyTorch CUDA (~2&nbsp;GB) — NVIDIA GPU recommended; CPU works but is slow.</p>
 						</div>
 					</div>
 				</div>
@@ -1197,6 +1360,7 @@
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 	<script src="js/theme.js"></script>
+	<script src="js/trailer.js"></script>
 	<script src="js/analytics.js"></script>
 
 	<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "676bb86b6a4e4cfe9a741feae2134229"}'></script><!-- End Cloudflare Web Analytics -->
