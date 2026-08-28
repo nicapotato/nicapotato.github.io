@@ -331,6 +331,38 @@
 		line-height: 1.28;
 		color: inherit;
 	}
+	.nt-aside-export {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0.2em 0.3em;
+		border: 2px solid transparent;
+		border-radius: 0;
+		background: transparent;
+		text-align: left;
+		font-family: Quicksand, Arial, sans-serif;
+		color: var(--nt-link);
+		cursor: pointer;
+		-webkit-appearance: none;
+		appearance: none;
+		transition:
+			color 0.15s ease,
+			border-color 0.15s ease,
+			background-color 0.15s ease;
+	}
+	.nt-aside-export:hover,
+	.nt-aside-export:focus {
+		color: var(--nt-heading);
+		border-color: var(--nt-border);
+		background: var(--nt-hover-bg);
+		outline: none;
+	}
+	.nt-aside-export:hover .nt-aside-links__platform,
+	.nt-aside-export:focus .nt-aside-links__platform,
+	.nt-aside-export:hover .nt-aside-links__ico,
+	.nt-aside-export:focus .nt-aside-links__ico {
+		color: var(--nt-text);
+	}
 
 	.timeline-centered:before {
 		width: 6px;
@@ -824,6 +856,260 @@
 	.js .animate-box {
 		opacity: 1 !important;
 	}
+
+	.nt-print-link,
+	.nt-print-avatar,
+	.nt-trailer-btn .nt-print-link__url {
+		display: none;
+	}
+
+	@page { size: A4; margin: 12mm; }
+
+	@media print {
+		:root,
+		html,
+		html[data-theme="dark"] {
+			color-scheme: light;
+			--nt-page-bg: #fff;
+			--nt-sidebar-bg: #f2f3f7;
+			--nt-card-bg: #fff;
+			--nt-text: rgba(0, 0, 0, 0.7);
+			--nt-heading: #000;
+			--nt-muted: rgba(0, 0, 0, 0.5);
+			--nt-muted-label: rgba(0, 0, 0, 0.45);
+			--nt-link: rgba(0, 0, 0, 0.78);
+			--nt-border: #0d0d0d;
+			--nt-hover-bg: rgba(255, 222, 68, 0.25);
+			--nt-shadow: rgba(13, 13, 13, 0.12);
+		}
+		html, body {
+			background: #fff !important;
+			color: var(--nt-text);
+		}
+		body.nt-trailer-open {
+			overflow: visible;
+		}
+		* {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+		.no-print,
+		.colorlib-nav-toggle,
+		.nt-theme-toggle,
+		#colorlib-main-menu,
+		.nt-trailer-modal,
+		iframe,
+		.nt-pixel-embed,
+		.nt-trailer-btn__icon,
+		.timeline-entry.begin {
+			display: none !important;
+		}
+		a[href]:after,
+		a[href][href]:after,
+		abbr[title]:after {
+			content: none !important;
+		}
+		#colorlib-page,
+		.container-wrap {
+			max-width: none !important;
+			width: 100% !important;
+			margin: 0 !important;
+			float: none !important;
+			overflow: visible !important;
+		}
+		#colorlib-aside {
+			position: static !important;
+			float: none !important;
+			width: 100% !important;
+			height: auto !important;
+			max-height: none !important;
+			overflow: visible !important;
+			padding: 0.6rem 0 0.9rem !important;
+			border-right: 0 !important;
+			border-bottom: 4px solid var(--nt-border);
+			background: var(--nt-sidebar-bg) !important;
+			transform: none !important;
+			box-shadow: none !important;
+		}
+		#colorlib-aside .author-img {
+			width: 72px;
+			height: 72px;
+			margin-bottom: 0.6rem;
+			box-shadow: 3px 3px 0 var(--nt-shadow);
+			background-image: none !important;
+			overflow: hidden;
+		}
+		.nt-print-avatar {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			image-rendering: pixelated;
+			image-rendering: crisp-edges;
+		}
+		#colorlib-aside .nt-aside-brand {
+			margin-bottom: 0.4em;
+		}
+		#colorlib-aside .position {
+			margin-bottom: 0.7em;
+		}
+		.nt-aside-links {
+			border-top: 3px solid var(--nt-border);
+			padding-bottom: 0;
+		}
+		#colorlib-main {
+			width: 100% !important;
+			max-width: none !important;
+			float: none !important;
+			overflow: visible !important;
+		}
+		.colorlib-featured,
+		.colorlib-experience {
+			padding-top: 1.1em;
+			padding-bottom: 1.1em;
+		}
+		.colorlib-experience {
+			break-before: page;
+			page-break-before: always;
+		}
+		#colorlib-main h2.colorlib-heading.nt-pixel-heading,
+		.colorlib-narrow-content > .row:first-child {
+			break-after: avoid;
+			page-break-after: avoid;
+		}
+		.timeline-entry,
+		.nt-blog-card,
+		.nt-app-card,
+		.nt-print-link {
+			break-inside: avoid;
+			page-break-inside: avoid;
+		}
+		.nt-two-col-row > .col-md-6 {
+			width: 50% !important;
+			max-width: 50%;
+			flex: 0 0 50%;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.nt-blog-card--kaggle {
+			background-image: none !important;
+			background-color: #4338ca !important;
+			color: #fff;
+		}
+		.nt-blog-card--itch {
+			background-image: none !important;
+			background-color: #c0392b !important;
+			color: #fff;
+		}
+		.nt-blog-card--substack {
+			background-image: none !important;
+			background-color: #c2410c !important;
+			color: #fff;
+		}
+		.nt-blog-card--stuff {
+			background-image: none !important;
+			background-color: #1a252f !important;
+			color: #fff;
+		}
+		.nt-blog-card--mindtricks {
+			background-image: none !important;
+			background-color: #e8e8ec !important;
+		}
+		.nt-blog-card--kaggle .nt-blog-card__platform,
+		.nt-blog-card--kaggle .nt-blog-card__title,
+		.nt-blog-card--kaggle .nt-blog-card__sub,
+		.nt-blog-card--kaggle .nt-blog-card__cta,
+		.nt-blog-card--itch .nt-blog-card__platform,
+		.nt-blog-card--itch .nt-blog-card__title,
+		.nt-blog-card--itch .nt-blog-card__sub,
+		.nt-blog-card--itch .nt-blog-card__cta,
+		.nt-blog-card--substack .nt-blog-card__platform,
+		.nt-blog-card--substack .nt-blog-card__title,
+		.nt-blog-card--substack .nt-blog-card__sub,
+		.nt-blog-card--substack .nt-blog-card__cta,
+		.nt-blog-card--stuff .nt-blog-card__platform,
+		.nt-blog-card--stuff .nt-blog-card__title,
+		.nt-blog-card--stuff .nt-blog-card__sub,
+		.nt-blog-card--stuff .nt-blog-card__cta {
+			color: #fff !important;
+		}
+		.nt-blog-card,
+		.nt-pixel-embed,
+		.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label,
+		.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+			box-shadow: 3px 3px 0 var(--nt-shadow) !important;
+			-moz-box-shadow: 3px 3px 0 var(--nt-shadow) !important;
+			-webkit-box-shadow: 3px 3px 0 var(--nt-shadow) !important;
+		}
+		.nt-blog-card:hover {
+			transform: none;
+			box-shadow: 3px 3px 0 var(--nt-shadow);
+		}
+		.nt-print-link {
+			display: block;
+			margin: 0 0 1rem;
+			padding: 0.85em 1em;
+			border: var(--nt-pixel-border);
+			background: var(--nt-card-bg);
+			box-shadow: 3px 3px 0 var(--nt-shadow);
+			text-decoration: none;
+			color: var(--nt-heading);
+		}
+		.nt-print-link__platform {
+			display: block;
+			font-size: 9px;
+			font-weight: 800;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--nt-muted);
+			margin-bottom: 0.25em;
+		}
+		.nt-print-link__title {
+			display: block;
+			font-family: "Press Start 2P", monospace;
+			font-size: 10px;
+			line-height: 1.7;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: var(--nt-heading);
+			margin-bottom: 0.35em;
+		}
+		.nt-print-link__url {
+			display: block;
+			font-size: 11px;
+			color: #0b57d0;
+			word-break: break-all;
+		}
+		.nt-trailer-btn {
+			display: block;
+			width: auto;
+			margin-top: 0.45rem;
+			padding: 0.7em 0.9em;
+			font-family: Quicksand, Arial, sans-serif;
+			font-size: 11px;
+			line-height: 1.35;
+			letter-spacing: 0.08em;
+			font-weight: 700;
+			text-align: left;
+			box-shadow: 3px 3px 0 var(--nt-shadow);
+			transform: none;
+			break-inside: avoid;
+			page-break-inside: avoid;
+			-webkit-font-smoothing: antialiased;
+		}
+		.nt-trailer-btn:hover,
+		.nt-trailer-btn:focus {
+			transform: none;
+			box-shadow: 3px 3px 0 var(--nt-shadow);
+		}
+		.nt-trailer-btn .nt-print-link__url {
+			display: block;
+			margin-top: 0.35em;
+		}
+		a {
+			color: #0b57d0;
+		}
+	}
 	</style>
 
 	<!-- Modernizr JS -->
@@ -849,9 +1135,11 @@
 		</button>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/icon.svg);"></div>
+				<div class="author-img" style="background-image: url(images/icon.svg);">
+					<img class="nt-print-avatar" src="images/icon.svg" alt="" width="150" height="150">
+				</div>
 				<div class="nt-aside-brand">
-					<h1 id="colorlib-logo"><a href="index.html">Nick Brooks</a></h1>
+					<h1 id="colorlib-logo"><a href="https://www.nicapotato.com/">Nick Brooks</a></h1>
 					<p class="nt-pseudonym">A.K.A NICAPOTATO</p>
 				</div>
 				<span class="position"><a href="https://www.linkedin.com/in/nickbrooks7/">Data Science and Engineering</a><br>Full Stack Engineer<br><br>in London, UK<br>(Settled European)</span>
@@ -940,6 +1228,33 @@
 								</span>
 							</span>
 						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="nt-aside-links no-print">
+				<p class="nt-aside-links__label">Export</p>
+				<ul>
+					<li>
+						<a href="nicapotato-com.pdf" download="nicapotato-com.pdf">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true"><i class="icon-download"></i></span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">File</span>
+									<span class="nt-aside-links__title">Download PDF</span>
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<button type="button" class="nt-aside-export" id="btn-print">
+							<span class="nt-aside-links__row">
+								<span class="nt-aside-links__ico" aria-hidden="true"><i class="icon-printer"></i></span>
+								<span class="nt-aside-links__text">
+									<span class="nt-aside-links__platform">Browser</span>
+									<span class="nt-aside-links__title">Save as PDF</span>
+								</span>
+							</span>
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -1232,11 +1547,17 @@
 							<div class="nt-pixel-embed">
 								<iframe title="RockNRoller on itch.io" frameborder="0" loading="lazy" data-itch-embed="4453671" src="https://itch.io/embed/4453671?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/rocknroller">RockNRoller by nicapotato</a></iframe>
 							</div>
+							<a class="nt-print-link" href="https://nicapotato.itch.io/rocknroller">
+								<span class="nt-print-link__platform">Itch.io</span>
+								<span class="nt-print-link__title">RockNRoller</span>
+								<span class="nt-print-link__url">nicapotato.itch.io/rocknroller</span>
+							</a>
 							<a class="nt-trailer-btn" href="https://www.youtube.com/watch?v=k--zDnyUZvs" target="_blank" rel="noopener noreferrer" data-youtube-id="k--zDnyUZvs" data-youtube-title="RocknRoller trailer">
 								<span class="nt-trailer-btn__icon" aria-hidden="true">
 									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M8 5v14l11-7z"/></svg>
 								</span>
 								Watch trailer
+								<span class="nt-print-link__url">youtube.com/watch?v=k--zDnyUZvs</span>
 							</a>
 						</div>
 					</div>
@@ -1245,6 +1566,11 @@
 							<div class="nt-pixel-embed">
 								<iframe title="Demucs MLX Audio Stemmer App on itch.io" frameborder="0" loading="lazy" data-itch-embed="4869317" src="https://itch.io/embed/4869317?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/demucs-mlx-app">Demucs MLX Audio Stemmer App by nicapotato</a></iframe>
 							</div>
+							<a class="nt-print-link" href="https://nicapotato.itch.io/demucs-mlx-app">
+								<span class="nt-print-link__platform">Itch.io</span>
+								<span class="nt-print-link__title">Demucs MLX Audio Stemmer</span>
+								<span class="nt-print-link__url">nicapotato.itch.io/demucs-mlx-app</span>
+							</a>
 							<p class="nt-app-note">Splits songs into six stems (drums, bass, other, vocals, guitar, piano) from MP3/WAV or Rocksmith PSARC. Same raylib GUI on both platforms; the worker differs. <strong>macOS Apple Silicon</strong> uses MLX + Metal (~132&nbsp;MB). <strong>Windows x64</strong> ships official Meta Demucs + PyTorch CUDA (~2&nbsp;GB) — NVIDIA GPU recommended; CPU works but is slow.</p>
 						</div>
 					</div>
@@ -1264,6 +1590,11 @@
 						<div class="nt-pixel-embed">
 							<iframe title="Mindsweeper on itch.io" frameborder="0" loading="lazy" data-itch-embed="4125365" src="https://itch.io/embed/4125365?bg_color=ffffff&amp;fg_color=0d0d0d&amp;link_color=fa5c5c&amp;border_color=0d0d0d" width="552" height="167"><a href="https://nicapotato.itch.io/mindsweeper">Mindsweeper by nicapotato</a></iframe>
 						</div>
+						<a class="nt-print-link" href="https://nicapotato.itch.io/mindsweeper">
+							<span class="nt-print-link__platform">Itch.io</span>
+							<span class="nt-print-link__title">Mindsweeper</span>
+							<span class="nt-print-link__url">nicapotato.itch.io/mindsweeper</span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -1362,6 +1693,17 @@
 	<script src="js/theme.js"></script>
 	<script src="js/trailer.js"></script>
 	<script src="js/analytics.js"></script>
+	<script>
+	(function () {
+		var btn = document.getElementById('btn-print');
+		if (!btn) {
+			throw new Error('Save as PDF button missing');
+		}
+		btn.addEventListener('click', function () {
+			window.print();
+		});
+	})();
+	</script>
 
 	<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "676bb86b6a4e4cfe9a741feae2134229"}'></script><!-- End Cloudflare Web Analytics -->
 
