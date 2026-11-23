@@ -16,7 +16,7 @@
 		light: {
 			bg_color: 'ffffff',
 			fg_color: '0d0d0d',
-			link_color: 'fa5c5c',
+			link_color: 'b53716',
 			border_color: '0d0d0d'
 		},
 		dark: {
